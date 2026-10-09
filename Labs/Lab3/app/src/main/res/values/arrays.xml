@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="message_senders">
+        <item>Gwyn</item>
+        <item>Nestha</item>
+        <item>Gwyn</item>
+        <item>Nestha</item>
+        <item>Gwyn</item>
+        <item>Nestha</item>
+        <item>Gwyn</item>
+        <item>Nestha</item>
+        <item>Gwyn</item>
+        <item>Nestha</item>
+        <item>Gwyn</item>
+    </string-array>
+
+    <string-array name="message_texts">
+        <item>OMG! Did you hear about the new ACOTAR book?</item>
+        <item>I did!!! It\'s going to be released on Oct 27th, right?</item>
+        <item>Yes! I\'m excited to read it, but I have a LOT of assignments to submit before that date</item>
+        <item>Ugh me too. I also have to go through my midterms next week 🫠</item>
+        <item>At least you\'ll have something relaxing to focus on after that</item>
+        <item>Wait... Don\'t you have a half marathon next weekend??? 🫪</item>
+        <item>I do!!! I\'m so excited but at the same time terrified</item>
+        <item>Girl, you trained really hard. You\'re going to rock your race 🏃🏻‍♀️</item>
+        <item>Thanks! I\'m counting on that ❤️</item>
+        <item>I\'ll be there cheering for you! 💛</item>
+        <item>Thanks! 😭❤️</item>
+    </string-array>
+
+
+</resources>
