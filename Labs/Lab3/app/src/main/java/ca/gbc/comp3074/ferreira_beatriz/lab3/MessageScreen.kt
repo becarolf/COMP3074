@@ -56,7 +56,7 @@ fun MessageItem(message: Message) {
                 .size(55.dp)
                 .background(
                     color = if (message.sender == "Gwyn")
-                        Color(0xFFF3D6E7)
+                        Color(0xFFB0EAFC)
                     else
                         Color(0xFFDDD8F5),
                     shape = CircleShape
@@ -68,7 +68,7 @@ fun MessageItem(message: Message) {
                 text = message.sender.take(1),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFF57418A)
+                color = Color(0xFF220659)
             )
         }
 
@@ -86,7 +86,7 @@ fun MessageItem(message: Message) {
 
             Surface(
                 shape = RoundedCornerShape(16.dp),
-                color = Color(0xFFF8F0FA),
+                color = Color(0xFFEFF5FA),
                 shadowElevation = 1.dp
             ) {
                 Text(

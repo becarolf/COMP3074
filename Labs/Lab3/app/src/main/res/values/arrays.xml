@@ -12,6 +12,9 @@
         <item>Gwyn</item>
         <item>Nestha</item>
         <item>Gwyn</item>
+        <item>Nestha</item>
+        <item>Gwyn</item>
+        <item>Nestha</item>
     </string-array>
 
     <string-array name="message_texts">
@@ -26,6 +29,9 @@
         <item>Thanks! I\'m counting on that ❤️</item>
         <item>I\'ll be there cheering for you! 💛</item>
         <item>Thanks! 😭❤️</item>
+        <item>Starts at 8am right?</item>
+        <item>Yep, but my corral will leave at 8.40am</item>
+        <item>Okayyyy</item>
     </string-array>
 
 
