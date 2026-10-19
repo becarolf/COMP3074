@@ -1,5 +1,6 @@
 package ca.gbc.comp3074.ferreira_beatriz.assignment1
 
+import android.graphics.Color as AndroidColor
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.ComponentActivity
@@ -16,6 +17,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -27,17 +29,23 @@ class AboutActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Assignment1Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize(),
+                    containerColor = Color(0xFFF3EEFA)) { innerPadding ->
                     Column(
                         modifier = Modifier
                             .padding(innerPadding)
-                            .fillMaxSize()
+                            .fillMaxSize(),
                     ) {
                         // use the toolbar as this activity's ActionBar
                         AndroidView(
                             factory = { context ->
                                 Toolbar(context).apply {
                                     title = "About"
+
+                                    setBackgroundColor(
+                                        AndroidColor.rgb(103, 80, 164)
+                                    )
+                                    setTitleTextColor(AndroidColor.WHITE)
 
                                     setActionBar(this)
 
@@ -53,17 +61,20 @@ class AboutActivity : ComponentActivity() {
                         ) {
                             Text(
                                 text = "Beatriz Ferreira",
-                                style = MaterialTheme.typography.headlineSmall
+                                style = MaterialTheme.typography.headlineSmall,
+                                color = Color(0xFF2F1365)
                             )
 
                             Text(
                                 text = "Student ID: 101176410",
-                                style = MaterialTheme.typography.bodyLarge
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = Color(0xFF2F1365)
                             )
 
                             Text(
                                 text = "COMP3074 — Assignment 1",
-                                style = MaterialTheme.typography.bodyLarge
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = Color(0xFF2F1365)
                             )
                         }
                     }
