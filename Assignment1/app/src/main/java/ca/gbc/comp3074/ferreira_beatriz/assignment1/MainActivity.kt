@@ -1,5 +1,6 @@
 package ca.gbc.comp3074.ferreira_beatriz.assignment1
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,7 +23,8 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     PayCalculatorScreen(
                         modifier = Modifier.padding(innerPadding), onAboutClick = {
-                            // next step
+                            val intent = Intent(this, AboutActivity::class.java)
+                            startActivity(intent)
                         }
                     )
                 }
