@@ -1,13 +1,18 @@
 package ca.gbc.comp3074.ferreira_beatriz.assignment1
 
+import androidx.compose.foundation.hoverable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsHoveredAsState
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import androidx.compose.material3.CheckboxDefaults.colors
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import java.util.Locale
@@ -17,6 +22,16 @@ fun PayCalculatorScreen(
     modifier: Modifier = Modifier,
     onAboutClick: () -> Unit
 ) {
+    // track when the mouse is over each button
+    val calculateInteraction = remember { MutableInteractionSource() }
+    val calculateHovered by calculateInteraction.collectIsHoveredAsState()
+
+    val aboutInteraction = remember { MutableInteractionSource() }
+    val aboutHovered by aboutInteraction.collectIsHoveredAsState()
+
+    val buttonPurple = Color(0xFF6750A4)
+    val darkPurple = Color(0xFF2F1365)
+
     // keep the entered values when the phone is rotated
     var hoursInput by rememberSaveable { mutableStateOf("") }
     var hourlyRateInput by rememberSaveable { mutableStateOf("") }
@@ -117,7 +132,14 @@ fun PayCalculatorScreen(
                     )
                 }
             },
-            modifier = Modifier.fillMaxWidth()
+            interactionSource = calculateInteraction,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = if (calculateHovered) darkPurple else buttonPurple,
+                contentColor = Color.White
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .hoverable(interactionSource = calculateInteraction),
         ) {
             Text("Calculate")
         }
@@ -136,9 +158,16 @@ fun PayCalculatorScreen(
             )
         }
 
-        OutlinedButton(
+        Button(
             onClick = onAboutClick,
-            modifier = Modifier.fillMaxWidth()
+            interactionSource = aboutInteraction,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = if (aboutHovered) darkPurple else buttonPurple,
+                contentColor = Color.White
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .hoverable(interactionSource = aboutInteraction)
         ) {
             Text("About")
         }
